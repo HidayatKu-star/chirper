@@ -28,7 +28,8 @@
         bg-base-200 font-sans">
     <nav class="navbar bg-base-100">
         <div class="navbar-start">
-            <a href="/" class="btn btn-ghost text-xl">🐦 Chirper</a>
+            {{-- <a href="/" class="btn btn-ghost text-xl">🐦 Chirper</a> --}}
+            <a href="/" class="btn btn-ghost text-xl">🧙🏻‍♂️ Merlin</a>
             <a href="/"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 312 69"
                     class="h-7 w-auto px-4">
                     <path fill="#D9D9D9"

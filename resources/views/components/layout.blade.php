@@ -122,7 +122,7 @@
     </form>
     <script>
         (function () {
-            const TIMEOUT_MS = 30000;
+            const TIMEOUT_MS = 10000;
             let timer;
 
             function resetTimer() {

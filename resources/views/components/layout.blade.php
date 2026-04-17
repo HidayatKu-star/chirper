@@ -9,7 +9,7 @@
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
-    <meta property="og:image" content="{{ asset('images/og.jpeg') }}" />
+    <meta property="og:image" content={{ asset('images/og.jpeg') }} />
     <meta property="og:title" content="Chirper" />
     <meta property="og:description"
         content="A demo social media platform highlighting the power and simplicity of Laravel." />
@@ -17,6 +17,9 @@
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('favicon-96x96.png') }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -25,6 +28,7 @@
         bg-base-200 font-sans">
     <nav class="navbar bg-base-100">
         <div class="navbar-start">
+            <a href="/" class="btn btn-ghost text-xl">🐦 Chirper</a>
             <a href="/"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 312 69"
                     class="h-7 w-auto px-4">
                     <path fill="#D9D9D9"
@@ -82,9 +86,14 @@
     <main class="flex-1 container mx-auto px-4 py-8">
         {{ $slot }}
     </main>
-
-    <footer class="w-full mt-24">
-        <div class="mx-auto w-full max-w-[1400px] px-4 xl:px-16">
+    <footer class="footer footer-center p-5 bg-base-300 text-base-content text-xs">
+        <div>
+            <p>© {{ date('Y') }} Chirper - Built with Laravel and ❤️</p>
+            </div>
+    </footer>
+    {{-- <footer class="w-full mt-24">
+        <p>© {{ date('Y') }} Chirper - Built with Laravel and ❤️</p>
+        {{-- <div class="mx-auto w-full max-w-[1400px] px-4 xl:px-16">
             <svg class="block w-full h-auto text-base-content opacity-8" viewBox="0 0 1280 308" aria-hidden="true"
                 focusable="false">
                 <path d="M50.2753 0H0V308.689H144.713V263.27H50.2753V0Z" fill="currentColor" />
@@ -105,7 +114,7 @@
             </svg>
             </p>
         </div>
-    </footer>
+    </footer> --}}
 </body>
 
 </html>

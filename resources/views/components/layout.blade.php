@@ -115,6 +115,30 @@
             </p>
         </div>
     </footer> --}}
+    @auth
+    <form id="auto-logout-form" method="POST" action="/logout" class="hidden">
+        @csrf
+    </form>
+    <script>
+        (function () {
+            const TIMEOUT_MS = 30000;
+            let timer;
+
+            function resetTimer() {
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    document.getElementById('auto-logout-form').submit();
+                }, TIMEOUT_MS);
+            }
+
+            ['mousemove', 'mousedown', 'keydown', 'scroll', 'touchstart', 'click'].forEach(function (event) {
+                document.addEventListener(event, resetTimer, { passive: true });
+            });
+
+            resetTimer();
+        })();
+    </script>
+    @endauth
 </body>
 
 </html>

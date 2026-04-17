@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chirp;
-use illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
 class ChirpController extends Controller
 {
+    use AuthorizesRequests;
     public function index()
     {
         $chirps = Chirp::with('user')
